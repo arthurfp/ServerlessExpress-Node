@@ -1,0 +1,18 @@
+app: serverless-express-example
+component: express
+name: express-starter
+
+inputs:
+  src:
+    src: ./dist
+  region: sa-east-1
+  runtime: nodejs14.x
+  functionName: add-fav-resource
+  entryFile: pro.js
+  functionConf:
+    timeout: 30
+  apigatewayConf:
+    protocols:
+      - http
+      - https
+    environment: release
