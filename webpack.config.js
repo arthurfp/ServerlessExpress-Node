@@ -5,7 +5,7 @@ module.exports = {
   mode: "production",
   output: {
     filename: 'pro.js',
-    path: path.resolve(__dirname,'dist'),
+    path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'commonjs2',
   },
   target: 'node' // must-have
