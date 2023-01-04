@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path');
+
 const app = express();
 
 // Routes
@@ -13,9 +13,9 @@ app.get('/user', (req, res) => {
 });
 
 app.get('/user/:id', (req, res) => {
-  const id = req.params.id;
+  const { id } = req.params;
   res.send({
-    id: id,
+    id,
     title: 'serverless framework',
     link: 'https://serverless.com',
   });
@@ -30,7 +30,7 @@ app.get('/500', (req, res) => {
 });
 
 // Error handler
-app.use(function (err, req, res, next) {
+app.use((err, req, res) => {
   console.error(err);
   res.status(500).send('Internal Serverless Error');
 });
